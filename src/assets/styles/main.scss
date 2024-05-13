@@ -1,0 +1,10 @@
+@use 'variables';
+
+h2 {
+  color: variables.$light-red;
+}
+
+.v-container {
+  background-color: variables.$light-red;
+  padding: 14px;
+}
