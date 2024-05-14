@@ -9,7 +9,7 @@
         <v-card-subtitle>
           <p class="text-body-1">
             Some information about marvel, more info
-            <a href="https://en.wikipedia.org/wiki/Marvel_Comics">here</a>
+            <a href="https://en.wikipedia.org/wiki/Marvel_Comics" target="_blank">here</a>
           </p>
         </v-card-subtitle>
 
