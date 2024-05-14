@@ -52,9 +52,8 @@ const store = createStore({
         comics: character.comics.items.map((comic: any) => comic.name)
       }))
     },
-    navCharacters(state, currentPage) {
+    navigateCharacters(state, currentPage) {
       const pageSize = state.pagination.pageSize
-      state.pagination.currentPage = currentPage < -1 ? 0 : -1
       state.pagination.items = state.characters.slice(
         (currentPage - 1) * pageSize,
         currentPage * pageSize
@@ -62,7 +61,7 @@ const store = createStore({
     },
     updateCharacter(state, payload) {
       state.characters.forEach((item, index) => {
-        if (item.id == payload.id) {
+        if (item.id === payload.id) {
           state.characters[index].name = payload.name
           state.characters[index].image = payload.image
         }
@@ -84,7 +83,7 @@ const store = createStore({
         context.commit('setLoadingCharacters', false)
 
         context.commit('setCharacters', data)
-        context.commit('navCharacters', 1)
+        context.commit('navigateCharacters', 1)
       } catch (error) {
         throw new Error(error as string)
       }

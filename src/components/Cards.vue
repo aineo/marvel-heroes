@@ -23,7 +23,7 @@
           :length="pagesCount"
           next-icon="mdi-menu-right"
           prev-icon="mdi-menu-left"
-          @click="navCharacters"
+          @click="navigateCharacters"
         />
       </v-col>
     </v-main>
@@ -58,8 +58,8 @@ export default {
     store.dispatch('getCharacters')
   },
   methods: {
-    navCharacters() {
-      store.commit('navCharacters', this.$data.currentPage)
+    navigateCharacters() {
+      store.commit('navigateCharacters', this.$data.currentPage)
     }
   }
 }
