@@ -102,7 +102,7 @@ export default {
       this.editMode = false
     },
     changeImage() {
-      if (this.loadedImage !== undefined || this.loadedImage.size < 2000000) {
+      if (this.loadedImage !== undefined && (this.loadedImage as File).size < 2000000) {
         this.characterImage = URL.createObjectURL(this.loadedImage)
       } else {
         throw new Error('Character image not exist or size should be less than 2 MB!')
